@@ -27,7 +27,7 @@ public class Base {
 
         switch (browsername) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver","(user.dir)"+"\\src\\main\\resources\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);

@@ -3,8 +3,7 @@
 <suite name="AmazonE2E">
     <test name="Regression">
         <classes>
-
-
+        <class name="Homepage"/>
         </classes>
     </test>
 </suite>
