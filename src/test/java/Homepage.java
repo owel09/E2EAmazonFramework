@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -23,15 +24,22 @@ public class Homepage extends Base{
         driver.get(properties.getProperty("homepageAmazonURL"));
         logger.info("Navigated to Homepage");
 
-        //nasan yung logs? di lumalabas basta yung logs ko
     }
 
     @Test
     public void signIn(){
         LandingPage landingPage = new LandingPage(driver);
-        landingPage.getsignIn().click();
+        landingPage.getCart().click();
+
+
 
     }
+
+    @AfterTest
+    public void teardown(){
+        driver.close();
+    }
+
 
 
 }
